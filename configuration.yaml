@@ -53,5 +53,19 @@ sensor:
 tts:
   platform: google
 
+# Dropdown for picking HDMI Switch Inputs
+input_select:
+  hdmi_switch:
+    name: HDMI Switch 
+    options:
+      - Chromecast
+      - Xbox
+      - Rack Computer
+      - Apple TV
+    initial: Chromecast
+    icon: mdi:movie
+
 group: !include groups.yaml
 automation: !include automations.yaml
+shell_command: !include shell_commands.yaml
+

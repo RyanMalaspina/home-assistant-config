@@ -1,2 +1,36 @@
-[]
-
+- action:
+  - service: shell_command.set_hdmi_1
+  alias: Set Switch to Chromecast
+  hide_entity: True
+  id: '1497064432776'
+  trigger:
+  - entity_id: input_select.hdmi_switch
+    platform: state
+    to: Chromecast
+- action:
+  - service: shell_command.set_hdmi_2
+  alias: Set Switch to Xbox
+  hide_entity: True
+  id: '1497064544761'
+  trigger:
+  - entity_id: input_select.hdmi_switch
+    platform: state
+    to: Xbox
+- action:
+  - service: shell_command.set_hdmi_3
+  alias: Set Switch to Rack Computer
+  hide_entity: True
+  id: '1497064582862'
+  trigger:
+  - entity_id: input_select.hdmi_switch
+    platform: state
+    to: Rack Computer
+- action:
+  - service: shell_command.set_hdmi_4
+  alias: Set Switch to Apple TV
+  hide_entity: True
+  id: '1497064642114'
+  trigger:
+  - entity_id: input_select.hdmi_switch
+    platform: state
+    to: Apple TV
