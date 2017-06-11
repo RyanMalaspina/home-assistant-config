@@ -34,3 +34,24 @@
   - entity_id: input_select.hdmi_switch
     platform: state
     to: Apple TV
+- action:
+  - service: light.turn_off
+    entity_id: group.all_lights
+  alias: Lights off when Chromecast Plays
+  id: '1497064647890'
+  trigger:
+  - entity_id: media_player.bill_bill_bill
+    platform: state
+    to: 'playing'
+- action:
+  - service: light.turn_on
+    entity_id: light.living_room
+  alias: Light on when Chromecast Pauses
+  id: '1497064640789'
+  trigger:
+  - entity_id: media_player.bill_bill_bill
+    platform: state
+    from: 'playing'
+    to: 'paused'
+
+
