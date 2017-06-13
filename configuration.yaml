@@ -53,27 +53,9 @@ sensor:
 tts:
   platform: google
 
-# Dropdown for picking HDMI Switch Inputs
-input_select:
-  hdmi_switch:
-    name: HDMI Switch 
-    options:
-      - Chromecast
-      - Xbox
-      - Rack Computer
-      - Apple TV
-    initial: Chromecast
-    icon: mdi:movie
-
-device_tracker:
-  - platform: nmap_tracker
-    hosts: 192.168.1.1/24
-    interval_seconds: 12
-    consider_home: 0:05
-    track_new_devices: no
-    exclude:
-      - 192.168.1.2
-
+input_select: !include input_selects.yaml 
+device_tracker: !include device_tracker.yaml
+zwave: !include zwave.yaml
 group: !include groups.yaml
 automation: !include automations.yaml
 shell_command: !include shell_commands.yaml

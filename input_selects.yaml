@@ -1,0 +1,10 @@
+hdmi_switch:
+  name: HDMI Switch 
+  options:
+    - Chromecast
+    - Xbox
+    - Rack Computer
+    - Apple TV
+  initial: Chromecast
+  icon: mdi:movie
+
