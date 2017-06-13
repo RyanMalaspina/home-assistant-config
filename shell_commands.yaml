@@ -1,13 +1,13 @@
 # HDMI Switch commands
 # Set switch baud rate to 19200
-hdmi_init: stty -F /dev/ttyUSB0 19200
+hdmi_init: stty -F /dev/hdmi 19200
 # Select different inputs
-set_hdmi_1: echo "sw i01" > /dev/ttyUSB0
-set_hdmi_2: echo "sw i02" > /dev/ttyUSB0
-set_hdmi_3: echo "sw i03" > /dev/ttyUSB0
-set_hdmi_4: echo "sw i04" > /dev/ttyUSB0
-set_hdmi_5: echo "sw i05" > /dev/ttyUSB0
-set_hdmi_6: echo "sw i06" > /dev/ttyUSB0
-set_hdmi_7: echo "sw i07" > /dev/ttyUSB0
-set_hdmi_8: echo "sw i08" > /dev/ttyUSB0
+set_hdmi_1: echo "sw i01" > /dev/hdmi
+set_hdmi_2: echo "sw i02" > /dev/hdmi
+set_hdmi_3: echo "sw i03" > /dev/hdmi
+set_hdmi_4: echo "sw i04" > /dev/hdmi
+set_hdmi_5: echo "sw i05" > /dev/hdmi
+set_hdmi_6: echo "sw i06" > /dev/hdmi
+set_hdmi_7: echo "sw i07" > /dev/hdmi
+set_hdmi_8: echo "sw i08" > /dev/hdmi
 
