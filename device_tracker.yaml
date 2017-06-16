@@ -1,7 +1,7 @@
 - platform: nmap_tracker
-  hosts: 192.168.1.1/24
+  hosts: !secret nmap_ips
   interval_seconds: 12
-  consider_home: 0:15
+  consider_home: 0:10
   track_new_devices: no
   exclude:
     - 192.168.1.2
