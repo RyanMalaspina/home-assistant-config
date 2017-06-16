@@ -53,5 +53,13 @@
     platform: state
     from: 'playing'
     to: 'paused'
-
+- action:
+  - service: light.turn_on
+    entity_id: group.all_lights
+  alias: Lights on when Chromecast off
+  id: '1497064640799'
+  trigger:
+  - entity_id: media_player.bill_bill_bill
+    platform: state
+    to: 'off'
 
