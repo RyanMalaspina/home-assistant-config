@@ -45,9 +45,7 @@ logbook:
 # Track the sun
 sun:
 
-# Weather Prediction
-sensor:
-  platform: yr
+sensor: !include sensors.yaml
 
 # Text to speech
 tts:
