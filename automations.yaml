@@ -62,4 +62,40 @@
   - entity_id: media_player.bill_bill_bill
     platform: state
     to: 'off'
+- action:
+  - service: ifttt.trigger
+    data: {"event":"ha_switch_partycube_on"}
+  alias: IFTTT Party Cube On
+  hide_entity: True
+  trigger:
+  - entity_id: input_boolean.party_cube
+    platform: state
+    to: 'on'
+- action:
+  - service: ifttt.trigger
+    data: {"event":"ha_switch_partycube_off"}
+  alias: IFTTT Party Cube Off
+  hide_entity: True
+  trigger:
+  - entity_id: input_boolean.party_cube
+    platform: state
+    to: 'off'
+- action:
+  - service: ifttt.trigger
+    data: {"event":"ha_switch_ryansfan_on"}
+  alias: IFTTT Ryan's fan on
+  hide_entity: True
+  trigger:
+  - entity_id: input_boolean.ryans_fan
+    platform: state
+    to: 'on'
+- action:
+  - service: ifttt.trigger
+    data: {"event":"ha_switch_ryansfan_off"}
+  alias: IFTTT Ryan's fan off
+  hide_entity: True
+  trigger:
+  - entity_id: input_boolean.ryans_fan
+    platform: state
+    to: 'off'
 

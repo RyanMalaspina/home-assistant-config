@@ -51,13 +51,15 @@ sensor: !include sensors.yaml
 tts:
   platform: google
 
+ifttt:
+  key: !secret ifttt_key
+
 input_select: !include input_selects.yaml 
+input_boolean: !include input_booleans.yaml
 device_tracker: !include device_tracker.yaml
 zwave: !include zwave.yaml
 group: !include groups.yaml
 automation: !include automations.yaml
 shell_command: !include shell_commands.yaml
 mqtt: !include mqtt.yaml
-ifttt:
-  key: !secret ifttt_key
 
