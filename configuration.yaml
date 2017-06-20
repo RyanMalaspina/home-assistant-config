@@ -57,4 +57,7 @@ zwave: !include zwave.yaml
 group: !include groups.yaml
 automation: !include automations.yaml
 shell_command: !include shell_commands.yaml
+mqtt: !include mqtt.yaml
+ifttt:
+  key: !secret ifttt_key
 

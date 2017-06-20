@@ -5,4 +5,5 @@
   track_new_devices: no
   exclude:
     - 192.168.1.2
+- platform: owntracks
 
