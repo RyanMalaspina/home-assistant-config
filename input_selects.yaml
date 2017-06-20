@@ -6,5 +6,5 @@ hdmi_switch:
     - Rack Computer
     - Apple TV
   initial: Chromecast
-  icon: mdi:movie
+  icon: mdi:video-switch
 

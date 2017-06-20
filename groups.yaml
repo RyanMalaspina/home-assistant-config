@@ -1,0 +1,10 @@
+Media Controls:
+  entities:
+    - input_select.hdmi_switch
+    - media_player.bill_bill_bill
+Chromecast Automations:
+  entities:
+    - automation.light_on_when_chromecast_pauses
+    - automation.lights_off_when_chromecast_plays
+    - automation.lights_on_when_chromecast_off
+
