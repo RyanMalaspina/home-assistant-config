@@ -1,2 +1,8 @@
-- platform: yr
+- platform: yr 
+  monitored_contitions:
+    - temperature
+    - symbol
+    - cloudiness
+    - humidity
+    - windSpeed
 

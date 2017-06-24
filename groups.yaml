@@ -2,6 +2,14 @@ Media Controls:
   entities:
     - input_select.hdmi_switch
     - media_player.bill_bill_bill
+Lights:
+  entities:
+    - light.living_room
+    - light.kitchen_sink_l
+    - light.kitchen_sink_r
+Weather Overview:
+  entities:
+    - sensor.pws_temp_c
 Chromecast Automations:
   entities:
     - automation.light_on_when_chromecast_pauses
