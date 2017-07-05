@@ -1,0 +1,16 @@
+- name: Home
+  entities:
+    group.lights: 
+      state: on
+      brightness: 254
+- name: Night
+  entities:
+    light.kitchen_sink_r: off
+    light.kitchen_sink_l: off
+    light.living_room:
+      state: on
+      brightness: 20
+- name: Away
+  entities:
+    group.lights: off
+
