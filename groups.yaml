@@ -2,6 +2,7 @@ Media Controls:
   entities:
     - input_select.hdmi_switch
     - media_player.bill_bill_bill
+    - media_player.apple_tv
 Lights:
   entities:
     - light.living_room
