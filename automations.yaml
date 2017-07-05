@@ -35,6 +35,15 @@
     platform: state
     to: Apple TV
 - action:
+  - service: shell_command.set_hdmi_5
+  alias: Set Switch to Input 5
+  hide_entity: True
+  id: '1497064642115'
+  trigger:
+  - entity_id: input_select.hdmi_switch
+    platform: state
+    to: Input 5
+- action:
   - service: light.turn_off
     entity_id: group.all_lights
   alias: Lights off when Chromecast Plays
