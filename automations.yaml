@@ -72,39 +72,11 @@
     platform: state
     to: 'off'
 - action:
-  - service: ifttt.trigger
-    data: {"event":"ha_switch_partycube_on"}
-  alias: IFTTT Party Cube On
+  - service: shell_command.hdmi_init
+  alias: Set HDMI baud rate on start
   hide_entity: True
+  id: '1597064432776'
   trigger:
-  - entity_id: input_boolean.party_cube
-    platform: state
-    to: 'on'
-- action:
-  - service: ifttt.trigger
-    data: {"event":"ha_switch_partycube_off"}
-  alias: IFTTT Party Cube Off
-  hide_entity: True
-  trigger:
-  - entity_id: input_boolean.party_cube
-    platform: state
-    to: 'off'
-- action:
-  - service: ifttt.trigger
-    data: {"event":"ha_switch_ryansfan_on"}
-  alias: IFTTT Ryan's fan on
-  hide_entity: True
-  trigger:
-  - entity_id: input_boolean.ryans_fan
-    platform: state
-    to: 'on'
-- action:
-  - service: ifttt.trigger
-    data: {"event":"ha_switch_ryansfan_off"}
-  alias: IFTTT Ryan's fan off
-  hide_entity: True
-  trigger:
-  - entity_id: input_boolean.ryans_fan
-    platform: state
-    to: 'off'
+  - platform: homeassistant
+    event: start
 

@@ -1,0 +1,24 @@
+# Thermostat isn't installed for now
+climate.ct100_cooling_1:
+  hidden: yes
+climate.ct100_heating_1:
+  hidden: yes
+
+# Hide outlet sensors
+sensor.air_freshener_current:
+  hidden: yes
+sensor.air_freshener_energy:
+  hidden: yes
+sensor.air_freshener_power:
+  hidden: yes
+sensor.air_freshener_previous_reading:
+  hidden: yes
+sensor.air_freshener_voltage:
+  hidden: yes
+
+# Hide motion sensor stuff
+binary_sensor.sensor:
+  hidden: yes
+binary_sensor.2nd_floor_sensor_sensor:
+  hidden: yes
+
