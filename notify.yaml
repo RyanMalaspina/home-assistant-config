@@ -1,0 +1,4 @@
+- name: ryan
+  platform: joaoapps_join
+  api_key: !secret join_ryan
+  device_id: 8373f41e3c5740d595a36d3abe2d3159

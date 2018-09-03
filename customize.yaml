@@ -22,3 +22,16 @@ binary_sensor.sensor:
 binary_sensor.2nd_floor_sensor_sensor:
   hidden: yes
 
+# Hide Lex's bs sensors
+sensor.lexxilollipop_battery_level:
+  hidden: yes
+sensor.lexxilollipop_battery_state:
+  hidden: yes
+
+# Hide sun since it's pretty apparent if it's up or not
+sun.sun:
+  hidden: yes
+
+# Icons
+script.wake_rack_computer:
+  icon: mdi:server

@@ -1,7 +1,7 @@
 - action:
   - service: shell_command.set_hdmi_1
   alias: Set Switch to Chromecast
-  hide_entity: True
+  hide_entity: true
   id: '1497064432776'
   trigger:
   - entity_id: input_select.hdmi_switch
@@ -10,7 +10,7 @@
 - action:
   - service: shell_command.set_hdmi_2
   alias: Set Switch to Xbox
-  hide_entity: True
+  hide_entity: true
   id: '1497064544761'
   trigger:
   - entity_id: input_select.hdmi_switch
@@ -19,7 +19,7 @@
 - action:
   - service: shell_command.set_hdmi_3
   alias: Set Switch to Rack Computer
-  hide_entity: True
+  hide_entity: true
   id: '1497064582862'
   trigger:
   - entity_id: input_select.hdmi_switch
@@ -27,56 +27,92 @@
     to: Rack Computer
 - action:
   - service: shell_command.set_hdmi_4
-  alias: Set Switch to Apple TV
-  hide_entity: True
-  id: '1497064642114'
-  trigger:
-  - entity_id: input_select.hdmi_switch
-    platform: state
-    to: Apple TV
-- action:
-  - service: shell_command.set_hdmi_5
-  alias: Set Switch to Input 5
-  hide_entity: True
+  alias: Set Switch to Input 4
+  hide_entity: true
   id: '1497064642115'
   trigger:
   - entity_id: input_select.hdmi_switch
     platform: state
-    to: Input 5
+    to: Input 4
 - action:
   - service: light.turn_off
     entity_id: group.all_lights
-  alias: Lights off when Chromecast Plays
+  alias: Lights off when Media plays
   id: '1497064647890'
   trigger:
-  - entity_id: media_player.bill_bill_bill
+  - entity_id: media_player.bill_bill_bill, media_player.kodi, media_player.apple_tv
     platform: state
-    to: 'playing'
+    to: playing
 - action:
   - service: light.turn_on
     entity_id: light.living_room
-  alias: Light on when Chromecast Pauses
+  alias: Light on when Media Pauses
   id: '1497064640789'
   trigger:
-  - entity_id: media_player.bill_bill_bill
+  - entity_id: media_player.bill_bill_bill, media_player.kodi, media_player.apple_tv
     platform: state
-    from: 'playing'
-    to: 'paused'
+    from: playing
+    to: paused
 - action:
   - service: light.turn_on
     entity_id: group.all_lights
-  alias: Lights on when Chromecast off
+  alias: Lights on when Media off
   id: '1497064640799'
   trigger:
-  - entity_id: media_player.bill_bill_bill
+  - entity_id: media_player.bill_bill_bill, media_player.kodi, media_player.apple_tv
     platform: state
     to: 'off'
 - action:
   - service: shell_command.hdmi_init
   alias: Set HDMI baud rate on start
-  hide_entity: True
+  hide_entity: true
   id: '1597064432776'
   trigger:
   - platform: homeassistant
     event: start
-
+- action:
+  - service: light.turn_on
+    entity_id: group.all_lights
+  alias: Lights on when Media idle
+  id: '1497066640796'
+  trigger:
+  - entity_id: media_player.bill_bill_bill, media_player.kodi, media_player.apple_tv
+    platform: state
+    to: idle
+- id: '1534802208342'
+  alias: Home Scene at Sunrise
+  trigger:
+  - event: sunrise
+    platform: sun
+  condition:
+  - condition: state
+    entity_id: group.all_devices
+    state: home
+  action:
+  - data:
+      entity_id: scene.home
+    service: scene.turn_on
+- id: '1534802350246'
+  alias: Away Scene When Everyone is Away
+  trigger:
+  - entity_id: group.all_devices
+    from: home
+    platform: state
+    to: not_home
+  condition: []
+  action:
+  - data:
+      entity_id: scene.away
+    service: scene.turn_on
+- id: '1534802695839'
+  alias: Home Scene When Someone Gets Home
+  trigger:
+  - entity_id: group.all_devices
+    from: not_home
+    platform: state
+    to: home
+  condition: []
+  action:
+  - data:
+      entity_id: scene.home
+    service: scene.turn_on

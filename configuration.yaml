@@ -7,7 +7,7 @@ homeassistant:
   # Impacts weather/sunrise data (altitude above sea level in meters)
   elevation: 164
   # metric for Metric, imperial for Imperial
-  unit_system: imperial
+  unit_system: metric
   # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
   time_zone: America/New_York
 
@@ -16,6 +16,15 @@ homeassistant:
 
 # Enables the frontend
 frontend:
+
+# Show Map
+# map:
+
+# Shopping List
+shopping_list:
+
+# iOS
+ios:
 
 # Enables configuration UI
 config:
@@ -36,6 +45,8 @@ discovery:
 # Allows you to issue voice commands from the frontend in enabled browsers
 conversation:
 
+# Record states for history
+recorder:
 # Enables support for tracking state changes over time.
 history:
 
@@ -55,12 +66,15 @@ ifttt:
   key: !secret ifttt_key
 
 input_select: !include input_selects.yaml 
-#input_boolean: !include input_booleans.yaml
 device_tracker: !include device_tracker.yaml
-zwave: !include zwave.yaml
 group: !include groups.yaml
 automation: !include automations.yaml
 shell_command: !include shell_commands.yaml
 mqtt: !include mqtt.yaml
 scene: !include scenes.yaml
-
+zone: !include zones.yaml
+media_player: !include media_player.yaml 
+notify: !include notify.yaml
+wemo: !include wemo.yaml
+script: !include scripts.yaml
+# zwave: !include zwave.yaml

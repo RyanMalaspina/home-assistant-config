@@ -2,7 +2,8 @@ Media Controls:
   entities:
     - input_select.hdmi_switch
     - media_player.bill_bill_bill
-    - media_player.apple_tv
+    - media_player.kodi
+    - script.wake_rack_computer
 Lights:
   entities:
     - light.living_room
@@ -11,9 +12,21 @@ Lights:
 Weather Overview:
   entities:
     - sensor.pws_temp_c
-Chromecast Automations:
+Media Automations:
   entities:
-    - automation.light_on_when_chromecast_pauses
-    - automation.lights_off_when_chromecast_plays
-    - automation.lights_on_when_chromecast_off
-
+    - automation.light_on_when_media_pauses
+    - automation.lights_off_when_media_plays
+    - automation.lights_on_when_media_off
+    - automation.lights_on_when_media_idle
+Weather:
+  entities:
+    - sensor.dark_sky_minutely_summary
+    - sensor.dark_sky_temperature
+    - sensor.dark_sky_precip_probability
+    - sensor.dark_sky_wind_speed
+    - sensor.dark_sky_cloud_coverage
+Pi-Hole:
+  entities:
+    - sensor.pihole_ads_percentage_blocked_today
+    - sensor.pihole_ads_blocked_today
+    - sensor.pihole_dns_queries_today

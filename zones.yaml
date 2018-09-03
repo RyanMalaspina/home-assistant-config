@@ -1,0 +1,10 @@
+- name: Home
+  latitude: !secret lat
+  longitude: !secret long
+  radius: 100
+  icon: mdi:home
+- name: Campus
+  latitude: !secret campus_lat
+  longitude: !secret campus_long
+  radius: 1000
+  icon: mdi:school

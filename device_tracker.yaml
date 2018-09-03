@@ -1,9 +1,16 @@
-- platform: nmap_tracker
-  hosts: !secret nmap_ips
+- platform: ping
+  hosts: !secret ping_ids
+  count: 3
   interval_seconds: 30
-  consider_home: 0:15
-  track_new_devices: no
-  exclude:
-    - 192.168.1.2
+  consider_home: 300
+  track_new_devices: False
+- platform: asuswrt
+  host: 192.168.1.1
+  username: admin
+  password: !secret router_password
+  interval_seconds: 30
+  consider_home: 300
+  new_device_defaults:
+    track_new_devices: False
+    hide_if_away: True
 - platform: owntracks
-

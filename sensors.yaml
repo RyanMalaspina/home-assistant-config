@@ -1,8 +1,15 @@
-- platform: yr 
-  monitored_contitions:
+- platform: darksky
+  api_key: !secret dark_sky_api_key
+  monitored_conditions:
     - temperature
-    - symbol
-    - cloudiness
-    - humidity
-    - windSpeed
-
+    - precip_probability
+    - minutely_summary
+    - wind_speed
+    - cloud_cover
+  update_interval: '00:30'
+  units: ca
+- platform: pi_hole
+  monitored_conditions:
+    - ads_percentage_today
+    - ads_blocked_today
+    - dns_queries_today

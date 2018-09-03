@@ -1,0 +1,40 @@
+light.living_room:
+  config_entry_id: a4305906f2804e1e854d644b1c2e4433
+  name:
+  platform: hue
+  unique_id: 00:17:88:01:10:31:d1:4d-0b
+light.kitchen_sink_r:
+  config_entry_id: a4305906f2804e1e854d644b1c2e4433
+  name:
+  platform: hue
+  unique_id: 00:17:88:01:10:26:2c:28-0b
+light.kitchen_sink_l:
+  config_entry_id: a4305906f2804e1e854d644b1c2e4433
+  name:
+  platform: hue
+  unique_id: 00:17:88:01:10:47:82:57-0b
+media_player.bill_bill_bill:
+  config_entry_id: 2c50ef84ecb842749e91100ecc83c252
+  name:
+  platform: cast
+  unique_id: 3e3d547a-df85-5425-5814-56230aecbcfc
+sensor.lexxilollipop_battery_state:
+  config_entry_id:
+  name:
+  platform: ios
+  unique_id: state_lexxilollipop
+sensor.lexxilollipop_battery_level:
+  config_entry_id:
+  name:
+  platform: ios
+  unique_id: level_lexxilollipop
+zwave.aeotec_dsa02203_zstick_s2:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: node-1
+zwave.aeotec_zw096_smart_switch_6:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: node-6

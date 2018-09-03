@@ -4,8 +4,5 @@ hdmi_switch:
     - Chromecast
     - Xbox
     - Rack Computer
-    - Apple TV
-    - Input 5
-  initial: Chromecast
+    - Input 4
   icon: mdi:video-switch
-
