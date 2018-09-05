@@ -13,4 +13,5 @@ set_hdmi_7: echo "sw i07" > /dev/hdmi
 set_hdmi_8: echo "sw i08" > /dev/hdmi
 
 # Wake up rack computer
-wake_rack_computer: wakeonlan !secret rack_mac
+# Address set in /etc/ethers
+wake_rack_computer: wakeonlan 192.168.1.4
