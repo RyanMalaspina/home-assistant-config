@@ -1,5 +1,5 @@
 wake_rack_computer:
-  alias: Wake up Rack Box
+  alias: Wake up Rack Computer
   sequence:
     - service: shell_command.wake_rack_computer
     - service: input_select.select_option
