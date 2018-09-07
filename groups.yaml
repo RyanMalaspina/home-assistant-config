@@ -7,8 +7,7 @@ Media Controls:
 Lights:
   entities:
     - light.living_room
-    - light.kitchen_sink_l
-    - light.kitchen_sink_r
+    - light.kitchen
 Weather Overview:
   entities:
     - sensor.pws_temp_c
