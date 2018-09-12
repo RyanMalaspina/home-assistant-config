@@ -2,6 +2,9 @@ wake_rack_computer:
   alias: Wake up Rack Computer
   sequence:
     - service: shell_command.wake_rack_computer
+    - service: wake_on_lan.send_magic_packet
+      data:
+        mac: !secret rack_mac
     - service: input_select.select_option
       data:
         entity_id: input_select.hdmi_switch
