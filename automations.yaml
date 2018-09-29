@@ -34,15 +34,18 @@
   - entity_id: input_select.hdmi_switch
     platform: state
     to: Input 4
-- action:
-  - service: light.turn_off
-    entity_id: group.all_lights
+- id: '1497064647890'
   alias: Lights off when Media plays
-  id: '1497064647890'
   trigger:
-  - entity_id: media_player.bill_bill_bill, media_player.kodi, media_player.apple_tv
+  - entity_id: media_player.bill_bill_bill, media_player.kodi
     platform: state
     to: playing
+  action:
+  - entity_id: group.all_lights
+    service: light.turn_off
+  - data:
+      entity_id: switch.switchmate
+    service: switch.turn_off
 - action:
   - service: light.turn_on
     entity_id: light.living_room
@@ -53,15 +56,18 @@
     platform: state
     from: playing
     to: paused
-- action:
-  - service: light.turn_on
-    entity_id: group.all_lights
-  alias: Lights on when Media off
-  id: '1497064640799'
+- id: '1497064640799'
+  alias: Lights on When Media Off
   trigger:
-  - entity_id: media_player.bill_bill_bill, media_player.kodi, media_player.apple_tv
+  - entity_id: media_player.bill_bill_bill, media_player.kodi
     platform: state
     to: 'off'
+  action:
+  - entity_id: group.all_lights
+    service: light.turn_on
+  - data:
+      entity_id: switch.switchmate
+    service: switch.turn_on
 - action:
   - service: shell_command.hdmi_init
   alias: Set HDMI baud rate on start
@@ -70,15 +76,18 @@
   trigger:
   - platform: homeassistant
     event: start
-- action:
-  - service: light.turn_on
-    entity_id: group.all_lights
-  alias: Lights on when Media idle
-  id: '1497066640796'
+- id: '1497066640796'
+  alias: Lights When Media Idle
   trigger:
-  - entity_id: media_player.bill_bill_bill, media_player.kodi, media_player.apple_tv
+  - entity_id: media_player.bill_bill_bill, media_player.kodi
     platform: state
     to: idle
+  action:
+  - entity_id: group.all_lights
+    service: light.turn_on
+  - data:
+      entity_id: switch.switchmate
+    service: switch.turn_off
 - id: '1534802208342'
   alias: Home Scene at Sunrise
   trigger:

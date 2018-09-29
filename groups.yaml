@@ -4,19 +4,17 @@ Media Controls:
     - media_player.bill_bill_bill
     - media_player.kodi
     - script.wake_rack_computer
-Lights:
+Downstairs:
   entities:
     - light.living_room
     - light.kitchen
-Weather Overview:
-  entities:
-    - sensor.pws_temp_c
+    - switch.switchmate
 Media Automations:
   entities:
     - automation.light_on_when_media_pauses
     - automation.lights_off_when_media_plays
     - automation.lights_on_when_media_off
-    - automation.lights_on_when_media_idle
+    - automation.lights_when_media_idle
 Weather:
   entities:
     - sensor.dark_sky_minutely_summary

@@ -1,0 +1,3 @@
+- platform: switchmate 
+  mac: !secret entry_light_mac
+  name: 'Entry Light'

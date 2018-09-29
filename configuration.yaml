@@ -79,3 +79,4 @@ wemo: !include wemo.yaml
 script: !include scripts.yaml
 # zwave: !include zwave.yaml
 wake_on_lan:
+switch: !include switch.yaml
