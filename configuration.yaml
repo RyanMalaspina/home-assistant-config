@@ -30,7 +30,6 @@ ios:
 config:
 
 http:
-  api_password: !secret http_password
 
 # Checks for available updates
 # Note: This component will send some information about your system to
