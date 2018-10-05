@@ -125,3 +125,18 @@
   - data:
       entity_id: scene.home
     service: scene.turn_on
+- id: '1538745290868'
+  hide_entity: true
+  alias: Launch Kore on Ryans phone when Kodi starts
+  trigger:
+  - entity_id: media_player.kodi
+    platform: state
+    to: idle
+  condition:
+  - condition: state
+    entity_id: device_tracker.ryan_pixelxl
+    state: home
+  action:
+  - data:
+      event: launch_kodi
+    service: ifttt.trigger
