@@ -3,6 +3,7 @@ services:
   homeassistant:
     container_name: home-assistant
     image: homeassistant/raspberrypi3-homeassistant:0.79.3
+    dns: 1.1.1.1
     volumes:
       - .:/config
       - /etc/localtime:/etc/localtime:ro
