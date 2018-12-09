@@ -32,6 +32,16 @@ sensor.lexxilollipop_battery_state:
 sun.sun:
   hidden: yes
 
+# Hide ASUSWRT sensors
+sensor.asuswrt_download:
+  hidden: yes
+sensor.asuswrt_download_speed:
+  hidden: yes
+sensor.asuswrt_upload:
+  hidden: yes
+sensor.asuswrt_upload_speed:
+  hidden: yes
+
 # Icons
 script.wake_rack_computer:
   icon: mdi:server
