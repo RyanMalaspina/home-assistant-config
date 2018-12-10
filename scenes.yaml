@@ -5,6 +5,7 @@
       brightness: 254
       rgb_color: [255, 207, 121]
     switch.switchmate: on
+    switch.aeotec_zw096_smart_switch_6_switch: on
 - name: Night
   entities:
     light.kitchen_sink_r: off
@@ -14,8 +15,9 @@
       brightness: 20
       rgb_color: [255, 0, 0]
     switch.switchmate: off
+    switch.aeotec_zw096_smart_switch_6_switch: off
 - name: Away
   entities:
     group.all_lights: off
-    switch.switchmate: off
+    group.all_switches: off
 
