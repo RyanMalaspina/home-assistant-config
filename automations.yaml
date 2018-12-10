@@ -46,6 +46,9 @@
   - data:
       entity_id: switch.switchmate
     service: switch.turn_off
+  - data:
+      entity_id: switch.aeotec_zw096_smart_switch_6_switch
+    service: switch.turn_off
 - action:
   - service: light.turn_on
     entity_id: light.living_room
@@ -68,6 +71,9 @@
   - data:
       entity_id: switch.switchmate
     service: switch.turn_on
+  - data:
+      entity_id: switch.aeotec_zw096_smart_switch_6_switch
+    service: switch.turn_on
 - action:
   - service: shell_command.hdmi_init
   alias: Set HDMI baud rate on start
@@ -87,6 +93,9 @@
     service: light.turn_on
   - data:
       entity_id: switch.switchmate
+    service: switch.turn_off
+  - data:
+      entity_id: switch.aeotec_zw096_smart_switch_6_switch
     service: switch.turn_off
 - id: '1534802208342'
   alias: Home Scene at Sunrise
