@@ -1,47 +1,48 @@
-# Thermostat isn't installed for now
 climate.ct100_cooling_1:
-  hidden: yes
+  hidden: true
 climate.ct100_heating_1:
-  hidden: yes
-
-# Hide outlet sensors
+  hidden: true
 sensor.air_freshener_current:
-  hidden: yes
+  hidden: true
 sensor.air_freshener_energy:
-  hidden: yes
+  hidden: true
 sensor.air_freshener_power:
-  hidden: yes
+  hidden: true
 sensor.air_freshener_previous_reading:
-  hidden: yes
+  hidden: true
 sensor.air_freshener_voltage:
-  hidden: yes
-
-# Hide motion sensor stuff
+  hidden: true
 binary_sensor.sensor:
-  hidden: yes
+  hidden: true
 binary_sensor.2nd_floor_sensor_sensor:
-  hidden: yes
-
-# Hide Lex's bs sensors
+  hidden: true
 sensor.lexxilollipop_battery_level:
-  hidden: yes
+  hidden: true
 sensor.lexxilollipop_battery_state:
-  hidden: yes
-
-# Hide sun since it's pretty apparent if it's up or not
+  hidden: true
 sun.sun:
-  hidden: yes
-
-# Hide ASUSWRT sensors
+  hidden: true
 sensor.asuswrt_download:
-  hidden: yes
+  hidden: true
 sensor.asuswrt_download_speed:
-  hidden: yes
+  hidden: true
 sensor.asuswrt_upload:
-  hidden: yes
+  hidden: true
 sensor.asuswrt_upload_speed:
-  hidden: yes
-
-# Icons
+  hidden: true
 script.wake_rack_computer:
   icon: mdi:server
+sensor.aeotec_zw096_smart_switch_6_energy:
+  hidden: true
+sensor.aeotec_zw096_smart_switch_6_power:
+  hidden: true
+sensor.aeotec_zw096_smart_switch_6_previous_reading:
+  hidden: true
+sensor.aeotec_zw096_smart_switch_6_voltage:
+  hidden: true
+sensor.aeotec_zw096_smart_switch_6_current:
+  hidden: true
+switch.aeotec_zw096_smart_switch_6_switch:
+  friendly_name: Party Cube
+switch.unknown_node_7_switch:
+  hidden: true
