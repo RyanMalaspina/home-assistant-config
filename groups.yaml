@@ -9,6 +9,7 @@ Downstairs:
     - light.living_room
     - light.kitchen
     - switch.switchmate
+    - switch.aeotec_zw096_smart_switch_6_switch
 Media Automations:
   entities:
     - automation.light_on_when_media_pauses
