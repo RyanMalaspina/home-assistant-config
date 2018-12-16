@@ -8,8 +8,8 @@ Downstairs:
   entities:
     - light.living_room
     - light.kitchen
-    - switch.switchmate
-    - switch.aeotec_zw096_smart_switch_6_switch
+    - switch.entry_light
+    - switch.party_cube
 Media Automations:
   entities:
     - automation.light_on_when_media_pauses
@@ -28,3 +28,4 @@ Pi-Hole:
     - sensor.pihole_ads_percentage_blocked_today
     - sensor.pihole_ads_blocked_today
     - sensor.pihole_dns_queries_today
+    - sensor.pihole_domains_blocked

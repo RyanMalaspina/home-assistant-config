@@ -2,47 +2,40 @@ climate.ct100_cooling_1:
   hidden: true
 climate.ct100_heating_1:
   hidden: true
-sensor.air_freshener_current:
-  hidden: true
-sensor.air_freshener_energy:
-  hidden: true
-sensor.air_freshener_power:
-  hidden: true
-sensor.air_freshener_previous_reading:
-  hidden: true
-sensor.air_freshener_voltage:
-  hidden: true
-binary_sensor.sensor:
-  hidden: true
-binary_sensor.2nd_floor_sensor_sensor:
-  hidden: true
 sensor.lexxilollipop_battery_level:
   hidden: true
 sensor.lexxilollipop_battery_state:
   hidden: true
-sun.sun:
-  hidden: true
-sensor.asuswrt_download:
-  hidden: true
-sensor.asuswrt_download_speed:
-  hidden: true
-sensor.asuswrt_upload:
-  hidden: true
-sensor.asuswrt_upload_speed:
-  hidden: true
+sun.sun: {}
+sensor.asuswrt_download: {}
+sensor.asuswrt_download_speed: {}
+sensor.asuswrt_upload: {}
+sensor.asuswrt_upload_speed: {}
 script.wake_rack_computer:
   icon: mdi:server
-sensor.aeotec_zw096_smart_switch_6_energy:
+sensor.party_cube_current: {}
+sensor.party_cube_energy: {}
+sensor.party_cube_power: {}
+sensor.party_cube_previous_reading: {}
+sensor.party_cube_voltage: {}
+binary_sensor.downstairs_multisensor_sensor: {}
+sensor.downstairs_multisensor_relative_humidity: {}
+sensor.downstairs_multisensor_luminance: {}
+sensor.downstairs_multisensor_temperature: {}
+sensor.upstairs_multisensor_relative_humidity: {}
+sensor.upstairs_multisensor_luminance: {}
+sensor.upstairs_multisensor_temperature: {}
+binary_sensor.upstairs_multisensor_sensor: {}
+switch.party_cube:
+  icon: mdi:led-on
+switch.entry_light:
+  icon: mdi:light-switch
+device_tracker.0023264aa238:
   hidden: true
-sensor.aeotec_zw096_smart_switch_6_power:
-  hidden: true
-sensor.aeotec_zw096_smart_switch_6_previous_reading:
-  hidden: true
-sensor.aeotec_zw096_smart_switch_6_voltage:
-  hidden: true
-sensor.aeotec_zw096_smart_switch_6_current:
-  hidden: true
-switch.aeotec_zw096_smart_switch_6_switch:
-  friendly_name: Party Cube
-switch.unknown_node_7_switch:
-  hidden: true
+scene.night:
+  icon: mdi:weather-night
+scene.home:
+  icon: mdi:home
+scene.away:
+  icon: mdi:home-outline
+automation.dim_red_when_motion_downstairs: {}

@@ -44,10 +44,10 @@
   - entity_id: group.all_lights
     service: light.turn_off
   - data:
-      entity_id: switch.switchmate
+      entity_id: switch.entry_light
     service: switch.turn_off
   - data:
-      entity_id: switch.aeotec_zw096_smart_switch_6_switch
+      entity_id: switch.party_cube
     service: switch.turn_off
 - action:
   - service: light.turn_on
@@ -55,7 +55,7 @@
   alias: Light on when Media Pauses
   id: '1497064640789'
   trigger:
-  - entity_id: media_player.bill_bill_bill, media_player.kodi, media_player.apple_tv
+  - entity_id: media_player.bill_bill_bill, media_player.kodi
     platform: state
     from: playing
     to: paused
@@ -63,16 +63,21 @@
   alias: Lights on When Media Off
   trigger:
   - entity_id: media_player.bill_bill_bill, media_player.kodi
+    from: playing
+    platform: state
+    to: 'off'
+  - entity_id: media_player.bill_bill_bill, media_player.kodi
+    from: paused
+    platform: state
+    to: 'off'
+  - entity_id: media_player.bill_bill_bill, media_player.kodi
+    from: idle
     platform: state
     to: 'off'
   action:
   - entity_id: group.all_lights
     service: light.turn_on
-  - data:
-      entity_id: switch.switchmate
-    service: switch.turn_on
-  - data:
-      entity_id: switch.aeotec_zw096_smart_switch_6_switch
+  - data: {}
     service: switch.turn_on
 - action:
   - service: shell_command.hdmi_init
@@ -89,13 +94,15 @@
     platform: state
     to: idle
   action:
-  - entity_id: group.all_lights
+  - data:
+      transition: '5'
+    entity_id: group.all_lights
     service: light.turn_on
   - data:
-      entity_id: switch.switchmate
+      entity_id: switch.entry_light
     service: switch.turn_off
   - data:
-      entity_id: switch.aeotec_zw096_smart_switch_6_switch
+      entity_id: switch.party_cube
     service: switch.turn_off
 - id: '1534802208342'
   alias: Home Scene at Sunrise
@@ -149,3 +156,41 @@
   - data:
       event: launch_kodi
     service: ifttt.trigger
+- id: '1544655095616'
+  alias: Notify Ryan when there's a Home Assistant update
+  hide_entity: true
+  trigger:
+  - entity_id: updater.updater
+    platform: state
+  condition: []
+  action:
+  - data:
+      message: There's a new Home Assistant update! {{ states.updater.updater.state
+        }}
+    service: notify.ryan
+- id: '1544786155171'
+  alias: Dim Red When Motion Downstairs
+  hide_entity: true
+  trigger:
+  - entity_id: binary_sensor.downstairs_multisensor_sensor
+    platform: state
+    to: 'on'
+  condition: []
+  action:
+  - data:
+      brightness: 20
+      rgb_color:
+      - 255
+      - 0
+      - 0
+    service: light.turn_on
+- id: '1544786382057'
+  alias: Lights Off When No Motion
+  trigger:
+  - entity_id: binary_sensor.downstairs_multisensor_sensor
+    platform: state
+    to: 'off'
+  condition: []
+  action:
+  - service: light.turn_off
+  hide_entity: true
