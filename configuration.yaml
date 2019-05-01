@@ -18,7 +18,7 @@ homeassistant:
 frontend:
 
 # Show Map
-# map:
+map:
 
 # Shopping List
 shopping_list:
@@ -39,7 +39,7 @@ http:
 updater:
 
 # Discover some devices automatically
-discovery:
+# discovery:
 
 # Allows you to issue voice commands from the frontend in enabled browsers
 conversation:
@@ -61,8 +61,7 @@ sensor: !include sensors.yaml
 tts:
   platform: google
 
-ifttt:
-  key: !secret ifttt_key
+system_health:
 
 input_select: !include input_selects.yaml 
 device_tracker: !include device_tracker.yaml
@@ -80,5 +79,4 @@ zwave: !include zwave.yaml
 wake_on_lan:
 switch: !include switch.yaml
 asuswrt: !include asuswrt.yaml
-owntracks: !include owntracks.yaml
 weather: !include weather.yaml

@@ -1,11 +1,3 @@
-climate.ct100_cooling_1:
-  hidden: true
-climate.ct100_heating_1:
-  hidden: true
-sensor.lexxilollipop_battery_level:
-  hidden: true
-sensor.lexxilollipop_battery_state:
-  hidden: true
 sun.sun: {}
 sensor.asuswrt_download: {}
 sensor.asuswrt_download_speed: {}
@@ -30,8 +22,6 @@ switch.party_cube:
   icon: mdi:led-on
 switch.entry_light:
   icon: mdi:light-switch
-device_tracker.0023264aa238:
-  hidden: true
 scene.night:
   icon: mdi:weather-night
 scene.home:
@@ -39,3 +29,8 @@ scene.home:
 scene.away:
   icon: mdi:home-outline
 automation.dim_red_when_motion_downstairs: {}
+group.media_controls:
+  entity_id:
+  - input_select.hdmi_switch
+  - media_player.bill_bill_bill
+  - media_player.kodi

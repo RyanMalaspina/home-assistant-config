@@ -6,7 +6,7 @@
     - minutely_summary
     - wind_speed
     - cloud_cover
-  update_interval: '00:15'
+  scan_interval: '00:15'
   units: ca
 - platform: pi_hole
   monitored_conditions:

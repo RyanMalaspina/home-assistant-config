@@ -2,7 +2,5 @@ hdmi_switch:
   name: HDMI Switch 
   options:
     - Chromecast
-    - Xbox
     - Rack Computer
-    - Input 4
   icon: mdi:video-switch

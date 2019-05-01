@@ -9,8 +9,9 @@
     automation.lights_off_when_no_motion: off
 - name: Night
   entities:
-    group.all_lights:
-      state: off
+    group.all_lights: 
+      state: on
+      brightness: 20
       rgb_color: [255, 0, 0]
     group.all_switches: off
     automation.dim_red_when_motion_downstairs: on
@@ -21,4 +22,3 @@
     group.all_switches: off
     automation.dim_red_when_motion_downstairs: off
     automation.lights_off_when_no_motion: off
-

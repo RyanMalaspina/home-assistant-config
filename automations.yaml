@@ -16,15 +16,21 @@
   - entity_id: input_select.hdmi_switch
     platform: state
     to: Xbox
-- action:
-  - service: shell_command.set_hdmi_3
+- id: '1497064582862'
   alias: Set Switch to Rack Computer
-  hide_entity: true
-  id: '1497064582862'
   trigger:
   - entity_id: input_select.hdmi_switch
     platform: state
     to: Rack Computer
+  action:
+  - service: shell_command.set_hdmi_3
+  - data:
+      mac: 1C-6F-65-3D-E6-7E
+    service: wake_on_lan.send_magic_packet
+  - data:
+      entity_id: switch.entry_light
+    service: switch.turn_off
+  hide_entity: true
 - action:
   - service: shell_command.set_hdmi_4
   alias: Set Switch to Input 4
@@ -142,32 +148,30 @@
       entity_id: scene.home
     service: scene.turn_on
 - id: '1538745290868'
-  hide_entity: true
-  alias: Launch Kore on Ryans phone when Kodi starts
+  alias: MQTT Publish Kodi Idle
   trigger:
   - entity_id: media_player.kodi
     platform: state
     to: idle
-  condition:
-  - condition: state
-    entity_id: device_tracker.ryan_pixelxl
-    state: home
+  condition: []
   action:
   - data:
-      event: launch_kodi
-    service: ifttt.trigger
-- id: '1544655095616'
-  alias: Notify Ryan when there's a Home Assistant update
+      payload: idle
+      topic: kodi
+    service: mqtt.publish
   hide_entity: true
+- id: '1544655095616'
+  alias: MQTT Publish Home Assistant Update
   trigger:
   - entity_id: updater.updater
     platform: state
   condition: []
   action:
   - data:
-      message: There's a new Home Assistant update! {{ states.updater.updater.state
-        }}
-    service: notify.ryan
+      payload: '{{ states.updater.updater.state }}'
+      topic: updater
+    service: mqtt.publish
+  hide_entity: true
 - id: '1544786155171'
   alias: Dim Red When Motion Downstairs
   hide_entity: true
@@ -184,6 +188,7 @@
       - 0
       - 0
     service: light.turn_on
+    entity_id: all
 - id: '1544786382057'
   alias: Lights Off When No Motion
   trigger:
@@ -193,4 +198,51 @@
   condition: []
   action:
   - service: light.turn_off
+    data:
+      entity_id: all
   hide_entity: true
+- id: '1552071710423'
+  alias: Chromecast State Change
+  trigger:
+  - entity_id: media_player.bill_bill_bill
+    platform: state
+  condition: []
+  action:
+  - data:
+      entity_id: input_select.hdmi_switch
+      option: Chromecast
+    service: input_select.select_option
+- id: '1552075932333'
+  alias: 'Night when sleeping '
+  trigger:
+  - platform: mqtt
+    topic: scene/night
+  condition: []
+  action:
+  - data:
+      entity_id: scene.night
+    service: scene.turn_on
+- id: '1552695569187'
+  alias: Kodi State Change
+  trigger:
+  - entity_id: media_player.kodi
+    platform: state
+  condition: []
+  action:
+  - data:
+      entity_id: input_select.hdmi_switch
+      option: Rack Computer
+    service: input_select.select_option
+- id: '1556663947098'
+  alias: Ryan Home
+  trigger:
+  - entity_id: device_tracker.ryan_pixel_xl
+    for: '30'
+    platform: state
+    to: home
+  condition: []
+  action:
+  - data:
+      payload: home
+      topic: device/ryan
+    service: mqtt.publish
